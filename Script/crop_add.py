@@ -1,3 +1,33 @@
+"""
+This script processes images in the input folder by either cropping or resizing them to meet the target resolution
+of 900x600 pixels. The script performs the following operations:
+
+1. **Cropping Images**:
+   - For images with dimensions greater than or equal to 900x600, the script crops the image to 900x600 pixels,
+     keeping the content centered.
+
+2. **Resizing Images**:
+   - For images with dimensions smaller than 900x600, the script:
+     a. Proportionally crops the image to maintain a 3:2 aspect ratio, centering the content.
+     b. Resizes the cropped image to 900x600 pixels.
+
+3. **File Organization**:
+   - Cropped images are saved in the `output_folder`.
+   - Resized images are saved in the `addition_folder`.
+
+### Usage:
+- Modify the `input_folder` variable to specify the directory containing the input images.
+- Modify the `output_folder` and `addition_folder` variables to set the output directories for cropped and resized images.
+- Ensure that the script has permission to read from the input folder and write to the output folders.
+
+### Supported Image Formats:
+- The script processes `.jpg`, `.jpeg`, and `.png` image files.
+
+### Requirements:
+- Python 3.x
+- The `Pillow` library (PIL fork) for image processing. Install using:
+"""
+
 import os
 from PIL import Image
 
