@@ -31,9 +31,9 @@ of 900x600 pixels. The script performs the following operations:
 import os
 from PIL import Image
 
-input_folder = 'E:/CS5330/datasets/temple_nara_japan/temple_nara_japan/dense_crop/images'
-output_folder = 'E:/CS5330/datasets/temple_nara_japan/temple_nara_japan/dense_crop/images_cropped_6_9_base'
-addition_folder = 'E:/CS5330/datasets/temple_nara_japan/temple_nara_japan/dense_crop/images_cropped_6_9_base_additional'
+input_folder = 'E:/CS5330/colmap-x64-windows-cuda/colmap_12_5/images_sorted'
+output_folder = 'E:/CS5330/colmap-x64-windows-cuda/colmap_12_5/images_crop/images_cropped_6_9_base'
+addition_folder = 'E:/CS5330/colmap-x64-windows-cuda/colmap_12_5/images_crop/images_cropped_6_9_base_additional'
 
 # 确保输出文件夹存在
 os.makedirs(output_folder, exist_ok=True)

@@ -1,0 +1,15 @@
+expname = horse_statue__test
+basedir = ./logs
+datadir = ./data/horse_statue
+dataset_type = llff
+
+factor = 2
+llffhold = 8
+
+N_rand = 2048
+N_samples = 128
+N_importance = 128
+
+use_viewdirs = True
+raw_noise_std = 0.1
+
