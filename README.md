@@ -13,7 +13,7 @@ However, NeRF often struggles when the training images include distracted or dyn
 
 ```
 git clone https://github.com/ZY-Garrete/CS5330_Final_Project.git
-cd nerf-pytorch
+cd CS5330_Final_Project
 pip install -r requirements.txt
 ```
 
@@ -43,12 +43,16 @@ Visual Samples from the Horse Statue Datasets: This dataset captures photographs
 + Generate a mask for the target objects.
 + Apply the mask overlay to the original image.
 + Use Stable Diffusion for image inpainting.
-**Change the input and output paths of your image collection**
+**Change the input and output paths of your image datasets**
 ```
     input_folder = 'replace your dataset path'
     segmented_output_folder = 'replace your segmented_imgs folder path'
     mask_output_folder = 'replace your output mask matrix[0,1] file'# 0 represents no building, 1 represents building. 
     inpaint_img_folder = 'your output inpaint images folder path'# It is best to generate inpaint in the data directory with name of images
+```
+Then, run image_util.py to get inpainted images for NeRF.
+```
+python image_util.py 
 ```
 After preprocessing pipeline, you can get three images folders, segmented image folder, mask matrix folder and inpaint images.
 you can analyze your preprocessing effect and fine tune your model on different parameters.
@@ -61,8 +65,9 @@ python run_nerf.py --config configs/horse_statue.txt
 ```
 After training for 50k iterations (~6 hours on a single 4080 Ti), you can find the following video at `logs/horse_statue_test/horse_statue_test_spiral_50000_rgb.mp4`.
 
-<img src="gif/horse_inpaint.gif" alt="Art GIF" width="400"> <img src="gif/art_inpaint.gif" alt="Art GIF" width="400">
+Here is output example of our two datasets, we have eliminated successfully irrelevant Objects(people) in 3D reconstruction using NeRF!
 
+<img src="gif/horse_inpaint.gif" alt="Art GIF" width="400"> <img src="gif/art_inpaint.gif" alt="Art GIF" width="400">
 ---
 
 
