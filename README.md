@@ -12,7 +12,7 @@ However, NeRF often struggles when the training images include distracted or dyn
 ## Installation
 
 ```
-git clone https://github.com/
+git clone https://github.com/ZY-Garrete/CS5330_Final_Project.git
 cd nerf-pytorch
 pip install -r requirements.txt
 ```
@@ -59,7 +59,7 @@ To train a `horse statue` NeRF:
 ```
 python run_nerf.py --config configs/horse_statue.txt
 ```
-After training for 50k iterations (~4 hours on a single 4080 Ti), you can find the following video at `logs/horse_statue_test/horse_statue_test_spiral_50000_rgb.mp4`.
+After training for 50k iterations (~6 hours on a single 4080 Ti), you can find the following video at `logs/horse_statue_test/horse_statue_test_spiral_50000_rgb.mp4`.
 
 <img src="gif/horse_inpaint.gif" alt="Art GIF" width="400"> <img src="gif/art_inpaint.gif" alt="Art GIF" width="400">
 
@@ -74,7 +74,8 @@ To play with the scenes presented above, Place the downloaded dataset according 
 │   ├── Fine_arts_statue.txt                                                                                          
 ├── data                                                                                                                                      
 │   ├── horse_statue
-│   ├── Fine_arts_statue                                                                                                                      
+│   |   └── images(Inpaint image folder)
+├──Fine_arts_statue                                                                                                                      
 |   |   └── ...
 ```
 
@@ -102,7 +103,7 @@ replace `{DATASET}` with `Fine_arts_statue`  etc.
  <sup>1</sup>UC Berkeley, <sup>2</sup>Google Research, <sup>3</sup>UC San Diego  
   \*denotes equal contribution  
   
-<img src='imgs/pipeline.jpg'/>
+<img src='gif/pipeline.jpg'/>
 
 > A neural radiance field is a simple fully connected network (weights are ~5MB) trained to reproduce input views of a single scene using a rendering loss. The network directly maps from spatial location and viewing direction (5D input) to color and opacity (4D output), acting as the "volume" so we can use volume rendering to differentiably render new views
 
@@ -118,10 +119,6 @@ Kudos to the authors for their amazing results:
     archivePrefix={arXiv},
     primaryClass={cs.CV}
 }
-```
-
-However, if you find this implementation or pre-trained models helpful, please consider to cite:
-```
 @misc{lin2020nerfpytorch,
   title={NeRF-pytorch},
   author={Yen-Chen, Lin},
